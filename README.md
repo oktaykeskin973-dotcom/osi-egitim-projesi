@@ -1,0 +1,1 @@
+# osi-egitim-projesi
