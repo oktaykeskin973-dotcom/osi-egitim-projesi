@@ -1,0 +1,230 @@
+body {
+    background-color: #0d1117;
+    color: #c9d1d9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    width: 80%;
+}
+
+header h1 {
+    color: #58a6ff;
+    letter-spacing: 2px;
+}
+
+.layer-card {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+.btn {
+    background-color: #238636;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.btn-skip {
+    background-color: transparent;
+    color: #f85149;
+    border: 1px solid #f85149;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.btn:hover { background-color: #2ea043; }
+.btn-skip:hover { background-color: #f85149; color: white; }
+/* Particles Arkaplan Ayarı */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* İçeriklerin arkasında kalmasını sağlar */
+}
+
+/* Modal (Açılır Pencere) Tasarımı */
+.modal {
+    display: none; /* Başlangıçta gizli */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8); /* Arkaplanı hafif karartır */
+}
+
+.modal-content {
+    background-color: #161b22;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #f85149;
+    border-radius: 10px;
+    width: 50%;
+    color: white;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(248, 81, 73, 0.5); /* Kırmızımsı bir parlama */
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: white;
+}
+
+.question-box {
+    margin-top: 20px;
+}
+
+.answer-btn {
+    background-color: #21262d;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 80%;
+}
+
+.answer-btn:hover {
+    background-color: #30363d;
+}
+
+#feedback-text {
+    margin-top: 20px;
+    font-weight: bold;
+}
+/* Senaryo Kutusu Tasarımı */
+.scenario-box {
+    background-color: #21262d;
+    padding: 20px;
+    border-left: 4px solid #58a6ff;
+    margin: 20px 0;
+    text-align: left;
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+.scenario-box h3 {
+    color: #58a6ff;
+    margin-top: 0;
+    border-bottom: 1px solid #30363d;
+    padding-bottom: 10px;
+}
+
+.scenario-box p {
+    line-height: 1.6;
+    font-size: 15px;
+}
+/* Yapay Zeka Asistanı Arayüzü */
+#ai-chat-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #58a6ff;
+    color: #0d1117;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(88, 166, 255, 0.5);
+    z-index: 1000;
+}
+
+#ai-chat-btn:hover { background-color: #3182ce; }
+
+.chat-window {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 350px;
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.8);
+}
+
+.chat-header {
+    background-color: #21262d;
+    padding: 15px;
+    border-bottom: 1px solid #30363d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+}
+
+.chat-header h3 { margin: 0; font-size: 16px; color: #58a6ff; }
+#close-chat-btn { cursor: pointer; font-size: 20px; color: #aaa; }
+#close-chat-btn:hover { color: white; }
+
+.chat-body {
+    padding: 15px;
+    height: 250px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message { padding: 10px; border-radius: 8px; max-width: 80%; font-size: 14px; line-height: 1.4; }
+.ai-message { background-color: #238636; color: white; align-self: flex-start; }
+.user-message { background-color: #30363d; color: #c9d1d9; align-self: flex-end; }
+
+.chat-footer {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #30363d;
+}
+
+#chat-input {
+    flex: 1;
+    padding: 10px;
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    color: white;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+#send-msg-btn {
+    background-color: #58a6ff;
+    color: #0d1117;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 0 5px 5px 0;
+}
+#send-msg-btn:hover { background-color: #3182ce; }

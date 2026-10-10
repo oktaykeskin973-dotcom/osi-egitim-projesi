@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSI Katmanları Eğitim Simülasyonu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Arkaplan animasyonu için boş bir div -->
+    <div id="particles-js"></div> 
+
+    <div class="container">
+        <header>
+            <h1>OSI REFERANS MODELİ</h1>
+            <p>Siber Uzaya Hoş Geldin. Eğitim Başlıyor.</p>
+        </header>
+
+        <main class="dashboard">
+            <div class="layer-card">
+                <h2>7. Uygulama Katmanı</h2>
+                <p>Uygulamaların ağa eriştiği kapıdır.</p>
+                <button class="btn" id="start-btn">Eğitime Başla</button>
+                <button class="btn-skip" id="skip-btn">Katmanı Atla (Boss Fight)</button>
+            </div>
+        </main>
+        <!-- Eğitim Paneli (Başlangıçta Gizli) -->
+        <!-- Eğitim Paneli (Dinamik Şablon) -->
+        <main id="education-panel" class="layer-card" style="display: none;">
+            <h2 id="layer-title">7. Uygulama Katmanı (Application)</h2>
+            <div class="scenario-box">
+                <h3 id="scenario-title">Senaryo: PUBG'de Ateş Etme Emri</h3>
+                <p id="scenario-desc">Düşmanı gördün ve farenin sol tıkına bastın. İşte ağ üzerindeki yolculuk tam bu saniye başlar!</p>
+                <p id="scenario-detail"><strong>Ne oluyor?</strong> Uygulama katmanı, ağ ile doğrudan temas kurduğumuz yerdir. PUBG istemcisi, "ateş etme" komutunu alır ve sunucuya gönderilecek bir veriye dönüştürür.</p>
+                <p id="scenario-protocol"><strong>Kullanılan Protokoller:</strong> Oyunun kendi özel API ve iletişim protokolleri.</p>
+            </div>
+            <button class="btn" id="next-layer-btn">6. Katmana (Sunum) Geç</button>
+            <button class="btn-skip" id="back-to-dash-btn">Dashboard'a Dön</button>
+        </main>
+    </div>
+
+    <!-- Boss Fight Uyarı Ekranı (Başlangıçta Gizli Olacak) -->
+    <div id="boss-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>BOSS FIGHT: 7. Katman</h2>
+            <p>Gerçekten bu katmanı bildiğini mi iddia ediyorsun? Eğer öyleyse şu soruya cevap ver:</p>
+            <div class="question-box">
+                <p><strong>Soru:</strong> HTTP, FTP ve SMTP protokolleri hangi OSI katmanında çalışır?</p>
+                <button class="answer-btn" onclick="checkAnswer(false)">Sunum Katmanı</button>
+                <button class="answer-btn" onclick="checkAnswer(true)">Uygulama Katmanı</button>
+                <button class="answer-btn" onclick="checkAnswer(false)">Oturum Katmanı</button>
+            </div>
+            <p id="feedback-text"></p>
+        </div>
+    </div>
+
+    <!-- Parçacık Animasyonu İçin Gerekli Kütüphane ve Bizim Script Dosyamız -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <!-- Siber Asistan Butonu ve Sohbet Penceresi -->
+        <button id="ai-chat-btn">🤖 Siber Asistan</button>
+
+        <div id="ai-chat-window" class="chat-window" style="display: none;">
+            <div class="chat-header">
+                <h3>Siber Asistan</h3>
+                <span id="close-chat-btn">&times;</span>
+            </div>
+            <div class="chat-body" id="chat-body">
+                <div class="message ai-message">Sisteme hoş geldin! Ben yapay zeka asistanınım. Şu an bulunduğun katmanla ilgili anlamadığın bir yer var mı?</div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" id="chat-input" placeholder="Yapay zekaya sor...">
+                <button id="send-msg-btn">Gönder</button>
+            </div>
+        </div>
+    <script src="script.js"></script>
+</body>
+</html>
